@@ -1,0 +1,52 @@
+@import "../../css-config/mixins.scss";
+.home-container {
+  font-family: "Inconsolata", monospace;
+  background-image: linear-gradient(
+    111.4deg,
+    rgba(7, 7, 9, 1) 6.5%,
+    rgba(27, 24, 113, 1) 93.2%
+  );
+  height: 100vh;
+  .home-layout {
+    height: 100%;
+    display: flex;
+    // justify-content: flex-end;
+    align-items: center;
+    flex-direction: column-reverse;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    position: relative;
+    @include md {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1400px;
+    }
+    .left {
+      width: 50%;
+      height: 500px;
+      //   border: 2px solid red;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      .landing-title {
+        font-size: 30px;
+        @include md {
+          font-size: 60px;
+        }
+      }
+      .landing-desc {
+        font-size: 24px;
+      }
+      .learn-more-button {
+        border: 2px solid rgb(72, 218, 123);
+        background-color: rgba(255, 255, 255, 0);
+        width: 150px;
+        height: 50px;
+        color: white;
+        font-size: 18px;
+      }
+    }
+  }
+}
