@@ -1,0 +1,74 @@
+@import "../../../css-config/mixins.scss";
+
+.carouselItem-container {
+  @import "~bootstrap/scss/bootstrap";
+  // padding-bottom: 4%;
+  background-color: #11103d;
+
+  .carouselItem-layout {
+    height: 100%;
+    display: flex;
+    // flex-wrap: wrap;
+    // justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    position: relative;
+    width: 800px;
+
+    @include md {
+      //   flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      max-width: 1400px;
+    }
+    .testi-title {
+      margin-top: 5%;
+      // text-decoration: underline;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      height: 40px;
+      font-size: 20px;
+      font-weight: bold;
+      @include md {
+        height: 80px;
+        font-size: 40px;
+      }
+    }
+    .carousel-indicators {
+      display: none;
+    }
+    .carousel-inner {
+      border-radius: 10px;
+      .carouselItem-image {
+        filter: opacity(0);
+      }
+      .carousel-caption {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h3 {
+          font-size: 20px;
+          height: 35px;
+          @include md {
+            height: 90px;
+            font-size: 30px;
+          }
+          //   border: 2px solid white;
+        }
+        p {
+          font-size: 10px;
+          @include md {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .carousel-control-next {
+      left: 83%;
+    }
+  }
+}

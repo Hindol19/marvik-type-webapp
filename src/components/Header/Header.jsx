@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useMediaQuery } from "@mui/material";
 import "./Header.scss";
-import MenuIcon from "@mui/icons-material/Menu";
 import { enableScroll, disableScroll } from "../../scripts/ToggleScrollEnable";
-
+import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
+
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+  console.log(isDesktop);
   const handleScroll = () => {
     const offset = window.scrollY;
 
@@ -26,19 +30,22 @@ const Header = () => {
     <nav
       className="navbar-container"
       style={{
-        backgroundColor: !scrolled && "rgba(0, 0, 0, 0)",
+        backgroundColor: !scrolled ? "rgba(0, 0, 0, 0)" : "black",
       }}
     >
-      <div className="navbar-layout">
-        <div className="left">Home</div>
-        <div className="right">
-          <div>About Us</div>
-          <div>Our Work</div>
-          <div>Services</div>
-          <div>Contact</div>
+      {isDesktop ? (
+        <div className="navbar-layout">
+          <div className="left" onClick={() => navigate("/")}>
+            Home
+          </div>
+          <div className="right">
+            <div onClick={() => navigate("/about")}>About Us</div>
+            <div onClick={() => navigate("/work")}>Our Work</div>
+            <div>Services</div>
+            <div className="contact-link">Contact</div>
+          </div>
         </div>
-      </div>
-      {/* {scrolled && (
+      ) : (
         <div className="sidebar-layout">
           <div
             className="sidebar-button"
@@ -56,15 +63,30 @@ const Header = () => {
             <div className="sidebar-content ">
               <div className="sidebar-title">hello there</div>
               <div className="sidebar-list">
-                <div className="sidebar-list-item">Home</div>
-                <div className="sidebar-list-item">About Me</div>
-                <div className="sidebar-list-item">My Works</div>
+                <div
+                  className="sidebar-list-item"
+                  onClick={() => navigate("/")}
+                >
+                  Home
+                </div>
+                <div
+                  className="sidebar-list-item"
+                  onClick={() => navigate("/about")}
+                >
+                  About Me
+                </div>
+                <div
+                  className="sidebar-list-item"
+                  onClick={() => navigate("/work")}
+                >
+                  My Works
+                </div>
                 <div className="sidebar-list-item">Contact</div>
               </div>
             </div>
           )}
         </div>
-      )} */}
+      )}
     </nav>
   );
 };

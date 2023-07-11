@@ -1,6 +1,8 @@
 import React from "react";
 import "./Footer.scss";
-import { FaLocationArrow, FaMobileAlt, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaQuestion, FaNetworkWired } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
+
 // import Payment from "../../assets/payments.png";
 // import { useNavigate } from "react-router-dom";
 const Footer = () => {
@@ -20,32 +22,29 @@ const Footer = () => {
         <div className="col">
           <div className="title">Contact</div>
           <div className="c-item">
-            <FaLocationArrow />
-            <div className="text">25 Demo Lane, Demo, Demo, Demo, 123456</div>
+            <FaHome />
+            <div className="text">Home</div>
           </div>
           <div className="c-item">
-            <FaMobileAlt />
-            <div className="text">Phone: 012 345 6789</div>
+            <FaQuestion />
+            <div className="text">About</div>
           </div>
           <div className="c-item">
-            <FaEnvelope />
-            <div className="text">Email: mystore01@gmail.com</div>
+            <FaNetworkWired />
+            <div className="text">Work</div>
+          </div>
+          <div className="c-item">
+            <AiOutlineMail />
+            <div className="text">Contact</div>
           </div>
         </div>
         <div className="col">
           <div className="title">Pages</div>
-          <span className="text">Home</span>
-          <span className="text">About</span>
-          <span className="text">Privacy Policy</span>
-          <span className="text">Returns</span>
-          <span className="text">Terms & Conditions</span>
-          <span className="text">Contact Us</span>
-        </div>
-      </div>
-      <div className="bottom-bar">
-        <div className="bottom-bar-content">
-          <div className="text">BUSINESS NAME 2023. PREMIUM DEMO PLATFORM.</div>
-          {/* <img src={Payment} alt="" /> */}
+          <span className="text">Services:</span>
+          <span className="text">Large Language Models</span>
+          <span className="text">Conversational AI</span>
+          <span className="text">Natural Language Processing</span>
+          <span className="text">Computer Vision</span>
         </div>
       </div>
     </footer>

@@ -18,46 +18,63 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    .left {
+      &:hover {
+        cursor: pointer;
+      }
+    }
     .right {
       font-size: 19px;
       display: flex;
       flex-direction: row;
       width: 750px;
       justify-content: space-around;
+      div {
+        padding: 2%;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .contact-link {
+        background-color: #12dabf;
+        color: black;
+        border-radius: 15px;
+      }
     }
   }
   .sidebar-layout {
     .sidebar-button {
       z-index: 300;
       position: fixed;
-      width: 100px;
-      height: 100px;
+      width: 60px;
+      height: 60px;
 
       top: 40px;
-      left: 92%;
+      left: 5%;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       svg {
-        font-size: 60px;
+        font-size: 30px;
       }
     }
     .sidebar-content {
       font-family: "Inconsolata", monospace;
       z-index: 200;
       position: fixed;
-      width: 40%;
+      width: 100%;
       background-color: rgba(0, 0, 0, 0.859);
       backdrop-filter: blur(5px);
-      left: 60%;
+      // left: 60%;
       height: 100vh;
       .sidebar-title {
         color: #bc8f1d;
         display: flex;
-        align-items: flex-end;
+        justify-content: end;
+        align-items: center;
         padding: 4%;
-        width: 95%;
+        width: 90%;
         height: 15%;
         margin: 0 auto;
         border-bottom: 2px solid white;
@@ -66,13 +83,16 @@
       .sidebar-list {
         padding: 4%;
         width: 95%;
-        font-size: 60px;
-        height: 85%;
+        font-size: 40px;
+        height: 55%;
         display: flex;
         flex-direction: column;
         .sidebar-list-item {
           height: 125px;
           cursor: pointer;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }

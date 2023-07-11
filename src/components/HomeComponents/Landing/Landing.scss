@@ -1,0 +1,89 @@
+@import "../../../css-config/mixins.scss";
+.landing-container {
+  font-family: "Inconsolata", monospace;
+  background-image: linear-gradient(
+    111.4deg,
+    rgba(7, 7, 9, 1) 6.5%,
+    rgba(27, 24, 113, 1) 93.2%
+  );
+  height: 100vh;
+  .landing-layout {
+    height: 100%;
+    display: flex;
+    // justify-content: flex-end;
+    align-items: center;
+    flex-direction: column-reverse;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    position: relative;
+    @include md {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1400px;
+    }
+    .left {
+      width: 80%;
+      height: 500px;
+      //   border: 2px solid red;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      @include md {
+        width: 50%;
+      }
+      .landing-title {
+        font-size: 25px;
+        @include md {
+          font-size: 60px;
+        }
+      }
+      .landing-desc {
+        font-size: 13px;
+        @include md {
+          font-size: 24px;
+        }
+      }
+      .learn-more-button {
+        border: 2px solid rgb(72, 218, 123);
+        background-color: rgba(255, 255, 255, 0);
+        width: 100px;
+        height: 40px;
+        color: white;
+        font-size: 12px;
+        @include md {
+          font-size: 18px;
+          width: 150px;
+          height: 50px;
+        }
+      }
+      .companies {
+        margin-top: 6%;
+        ul {
+          display: flex;
+          flex-direction: row;
+          font-size: 12px;
+          width: 200px;
+          justify-content: space-evenly;
+          @include md {
+            width: 500px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .right {
+      align-items: center;
+      justify-content: center;
+      display: none;
+      @include md {
+        display: flex;
+        width: 50%;
+      }
+      img {
+        width: 80%;
+      }
+    }
+  }
+}
