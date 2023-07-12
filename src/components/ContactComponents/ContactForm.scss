@@ -1,0 +1,79 @@
+@import "../../css-config/mixins.scss";
+.contactForm-container {
+  background: url("https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+    no-repeat center center/cover;
+  .contactForm-layout {
+    height: 100%;
+    display: flex;
+    // flex-wrap: wrap;
+    // justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 5%;
+    @include md {
+      //   flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      max-width: 1400px;
+    }
+    .contact-title {
+      margin: 4% 0;
+      //   text-align: left;
+      font-size: 25px;
+      @include md {
+        font-size: 40px;
+      }
+    }
+    .form {
+      width: 300px;
+      @include md {
+        width: 800px;
+      }
+      .fSet {
+        border-radius: 20px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.637);
+        backdrop-filter: blur(5px);
+        margin: 2%;
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        label {
+          color: white;
+          font-weight: bold;
+          margin: 2% 0;
+          font-size: 12px;
+          @include md {
+            font-size: 20px;
+          }
+        }
+        input {
+          border: none;
+          margin-bottom: 4%;
+          height: 50px;
+          outline: none;
+          padding: 0 3%;
+          font-size: 12px;
+          @include md {
+            font-size: 18px;
+          }
+        }
+        textarea {
+          padding: 0 3%;
+          padding-top: 3%;
+          border: none;
+          margin-bottom: 4%;
+          height: 170px;
+          outline: none;
+          font-size: 12px;
+          @include md {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

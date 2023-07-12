@@ -1,19 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState } from "react";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header/Header";
+// import Navbar2 from "./components/Navbar/Navbar2";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Work from "./Pages/Work/Work";
 import Footer from "./components/Footer/Footer";
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { gsap } from "gsap";
+import Contact from "./Pages/Contact/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-
+import ServicesPage from "./Pages/Services/ServicesPage";
+import { servicesList } from "./data/servicesList.js";
 const App = () => {
- 
-
   const landingContent = {
     home: {
       title: "Home Landing Title",
@@ -27,12 +24,21 @@ const App = () => {
       title: "Work Landing Title",
       desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ea, placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! ",
     },
+    services: {
+      title: "Services Landing Title",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ea, placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! ",
+    },
+    contact: {
+      title: "Contact Landing Title",
+      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ea, placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! ",
+    },
   };
 
   return (
     <div>
       <BrowserRouter>
         <Header />
+        {/* <Navbar2 /> */}
         <Routes>
           <Route
             path="/"
@@ -45,6 +51,46 @@ const App = () => {
           <Route
             path="/work"
             element={<Work landingContent={landingContent.work} />}
+          />
+          <Route
+            path="/services/llm"
+            element={
+              <ServicesPage
+                landingContent={landingContent.services}
+                content={servicesList.llm}
+              />
+            }
+          />
+          <Route
+            path="/services/cb"
+            element={
+              <ServicesPage
+                landingContent={landingContent.services}
+                content={servicesList.cb}
+              />
+            }
+          />
+          <Route
+            path="/services/nlp"
+            element={
+              <ServicesPage
+                landingContent={landingContent.services}
+                content={servicesList.nlp}
+              />
+            }
+          />
+          <Route
+            path="/services/cv"
+            element={
+              <ServicesPage
+                landingContent={landingContent.services}
+                content={servicesList.cv}
+              />
+            }
+          />
+          <Route
+            path="/contact"
+            element={<Contact landingContent={landingContent.contact} />}
           />
         </Routes>
         <Footer />

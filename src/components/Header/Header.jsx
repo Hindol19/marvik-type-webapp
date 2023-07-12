@@ -4,13 +4,17 @@ import "./Header.scss";
 import { enableScroll, disableScroll } from "../../scripts/ToggleScrollEnable";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
+import DropDown from "./DropDown/DropDown";
 const Header = () => {
   const navigate = useNavigate();
 
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
-  console.log(isDesktop);
+
+  // const [isDropDownHovered, setIsDropDownHovered] = useState(false);
+  const [isServiceHovered, setIsServiceHovered] = useState(false);
+
   const handleScroll = () => {
     const offset = window.scrollY;
 
@@ -41,9 +45,23 @@ const Header = () => {
           <div className="right">
             <div onClick={() => navigate("/about")}>About Us</div>
             <div onClick={() => navigate("/work")}>Our Work</div>
-            <div>Services</div>
-            <div className="contact-link">Contact</div>
+            <div
+              // onClick={() => navigate("/services")}
+              onClick={() =>
+                !isServiceHovered
+                  ? setIsServiceHovered(true)
+                  : setIsServiceHovered(false)
+              }
+              // onAuxClick={() => setIsServiceHovered(false)}
+            >
+              Services
+            </div>
+            {/* <DropDown /> */}
+            <div className="contact-link" onClick={() => navigate("/contact")}>
+              Contact
+            </div>
           </div>
+          {isServiceHovered && <DropDown />}
         </div>
       ) : (
         <div className="sidebar-layout">
@@ -73,13 +91,32 @@ const Header = () => {
                   className="sidebar-list-item"
                   onClick={() => navigate("/about")}
                 >
-                  About Me
+                  About Us
                 </div>
                 <div
                   className="sidebar-list-item"
                   onClick={() => navigate("/work")}
                 >
-                  My Works
+                  Our Works
+                </div>
+                <div className="sidebar-list-item">
+                  Services
+                  <div>
+                    <ul>
+                      <li onClick={() => navigate("/services/llm")}>
+                        Large Language Models
+                      </li>
+                      <li onClick={() => navigate("/services/nlp")}>
+                        Natural Language Processing
+                      </li>
+                      <li onClick={() => navigate("/services/cv")}>
+                        Computer Vision
+                      </li>
+                      <li onClick={() => navigate("/services/cb")}>
+                        Conversational AI
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <div className="sidebar-list-item">Contact</div>
               </div>

@@ -2,9 +2,9 @@ import React from "react";
 import "./Landing.scss";
 import Land from "../../../assets/flLand.png";
 const Landing = ({ landingContent, isHome = false }) => {
-  console.log(landingContent);
+  // console.log(isHome);
   return (
-    <section className="one landing-container">
+    <section className={`one landing-container ${isHome && "full-height"}`}>
       <div className="landing-layout">
         <div className="left">
           <h2 className="landing-title">{landingContent.title}</h2>

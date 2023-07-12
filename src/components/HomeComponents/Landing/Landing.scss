@@ -1,4 +1,8 @@
 @import "../../../css-config/mixins.scss";
+.full-height {
+  height: 100vh !important;
+}
+
 .landing-container {
   font-family: "Inconsolata", monospace;
   background-image: linear-gradient(
@@ -6,7 +10,11 @@
     rgba(7, 7, 9, 1) 6.5%,
     rgba(27, 24, 113, 1) 93.2%
   );
-  height: 100vh;
+  // height: 100vh;
+  padding-top: 10%;
+  @include md {
+    padding-top: 0;
+  }
   .landing-layout {
     height: 100%;
     display: flex;
