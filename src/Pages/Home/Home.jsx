@@ -31,7 +31,9 @@ const tests = [
   },
 ];
 const Home = ({ landingContent }) => {
-  const Brain = "./assets/earth/scene.glb";
+  // const Brain = "./assets/earth/scene.glb";
+  const Brain = "./assets/curr.glb";
+  const Bg = "./assets/bg/scene.gltf";
   useEffect(() => {
     // BASE
     const canvas = document.querySelector("canvas.webgl");
@@ -48,16 +50,28 @@ const Home = ({ landingContent }) => {
     // scene.add(cube);
 
     //GLTF LOADER
-    let donut = null;
+    let earth = null;
     const gltfLoader = new GLTFLoader();
     gltfLoader.load(Brain, (gltf) => {
-      donut = gltf.scene;
-      donut.position.x = 1.5;
-      // donut.position.y = 1.9;
-      donut.rotation.y = -Math.PI * 0.3;
+      earth = gltf.scene;
+      earth.position.x = 1.5;
+      // earth.position.y = 1.9;
+      earth.rotation.y = -Math.PI * 0.3;
       const radius = 1;
-      donut.scale.set(radius, radius, radius);
-      scene.add(donut);
+      earth.scale.set(radius, radius, radius);
+      scene.add(earth);
+    });
+
+    let background = null;
+    const gltfLoader2 = new GLTFLoader();
+    gltfLoader2.load(Bg, (gltf) => {
+      background = gltf.scene;
+      background.position.x = 1.5;
+      // earth.position.y = 1.9;
+      background.rotation.y = -Math.PI * 0.3;
+      const radius2 = 0.07;
+      background.scale.set(radius2, radius2, radius2);
+      scene.add(background);
     });
 
     // SCROLL:
@@ -94,19 +108,19 @@ const Home = ({ landingContent }) => {
       if (newSection != currentSection) {
         currentSection = newSection;
 
-        if (!!donut) {
-          gsap.to(donut.rotation, {
+        if (!!earth) {
+          gsap.to(earth.rotation, {
             duration: 1,
             ease: "power2.inOut",
             z: transformDonut[currentSection]?.rotationZ,
           });
-          gsap.to(donut.rotation, {
+          gsap.to(earth.rotation, {
             duration: 1,
             ease: "power2.inOut",
             y: transformDonut[currentSection]?.rotationY,
           });
 
-          gsap.to(donut.position, {
+          gsap.to(earth.position, {
             duration: 1,
             ease: "power2.inOut",
             x: transformDonut[currentSection]?.positionX,
@@ -165,10 +179,11 @@ const Home = ({ landingContent }) => {
       const deltaTime = elapsedTime - lastElapsedTime;
       lastElapsedTime = elapsedTime;
 
-      if (!!donut) {
-        donut.position.y = Math.sin(elapsedTime * 0.5) * 0.1 - 0.2;
+      if (!!earth) {
+        earth.position.y = Math.sin(elapsedTime * 0.5) * 0.1 - 0.2;
+        earth.rotation.y = elapsedTime;
+        background.rotation.y = elapsedTime / 10;
       }
-      // cube.rotation.y = Math.sin(elapsedTime);
       // console.log("tick");
       renderer.render(scene, camera);
 
