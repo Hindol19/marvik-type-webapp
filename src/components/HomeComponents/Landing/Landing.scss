@@ -1,9 +1,13 @@
 @import "../../../css-config/mixins.scss";
-.full-height {
-  height: 100vh !important;
+.fixed-height {
+  .landing-desc {
+    margin: 0 !important;
+    margin-bottom: 8% !important;
+  }
 }
 
 .landing-container {
+  height: 100vh !important;
   font-family: "Inconsolata", monospace;
   background-image: linear-gradient(
     111.4deg,
@@ -30,16 +34,17 @@
       justify-content: space-between;
       max-width: 1400px;
     }
+
     .left {
       width: 80%;
-      height: 500px;
+      // height: 500px;
       //   border: 2px solid red;
       color: white;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       @include md {
-        width: 50%;
+        width: 80%;
       }
       .landing-title {
         color: yellow;
@@ -49,6 +54,7 @@
         }
       }
       .landing-desc {
+        margin: 5% 0;
         font-size: 13px;
         @include md {
           font-size: 40px;

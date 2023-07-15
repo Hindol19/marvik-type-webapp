@@ -17,10 +17,30 @@
       padding: 50px 0;
     }
     .col {
-      max-width: 300px;
+      max-width: 400px;
       .title {
         margin-bottom: 20px;
         font-size: 14px;
+      }
+      .footer-leftmost-text {
+        .footer-leftmost-text-lines {
+          svg {
+            margin-right: 6px;
+            font-size: 16px;
+          }
+        }
+        div {
+          // border: 2px solid red;
+          display: flex;
+          margin-bottom: 5%;
+          align-items: center;
+        }
+        .social-icons {
+          // border: 1px solid red;
+          // margin-right: 4%;
+          gap: 15px;
+        }
+        // height: 100%;
       }
       .text {
         color: rgb(209, 209, 209);
@@ -29,9 +49,12 @@
       .c-item {
         display: flex;
         margin-bottom: 10px;
+        align-items: center;
+        cursor: pointer;
+
         svg {
           flex-shrink: 0;
-          font-size: 14px;
+          font-size: 16px;
           margin-right: 10px;
           margin-top: 4px;
           color: rgb(209, 209, 209);
@@ -49,6 +72,7 @@
     color: rgb(209, 209, 209);
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     .bottom-bar-content {
+      text-transform: uppercase;
       padding: 20px;
       display: flex;
       align-items: center;
