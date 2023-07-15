@@ -1,9 +1,10 @@
 @import "../../../css-config/mixins.scss";
 
-.carousel-container {
+.carouselItem-container {
   @import "~bootstrap/scss/bootstrap";
-  margin-bottom: 4%;
-  .carousel-layout {
+  // margin-bottom: 4%;
+  padding-bottom: 4%;
+  .carouselItem-layout {
     height: 100%;
     display: flex;
     // flex-wrap: wrap;

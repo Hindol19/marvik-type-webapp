@@ -19,6 +19,12 @@
     flex-direction: row;
     justify-content: space-between;
     .left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 200px;
+      }
       &:hover {
         cursor: pointer;
       }

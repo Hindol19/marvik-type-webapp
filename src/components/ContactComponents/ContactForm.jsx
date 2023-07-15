@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm, ValidationError } from "@formspree/react";
+// import { useForm, ValidationError } from "@formspree/react";
 import "./ContactForm.scss";
 const ContactForm = () => {
   return (

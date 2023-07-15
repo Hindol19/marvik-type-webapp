@@ -13,16 +13,16 @@ import { servicesList } from "./data/servicesList.js";
 const App = () => {
   const landingContent = {
     home: {
-      title: "Home Landing Title",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ea, placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! ",
+      title: "Next Gen Enterprise ",
+      desc: "Software Developement Company",
     },
     about: {
       title: "About Landing Title",
       desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ea, placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! ",
     },
     work: {
-      title: "Work Landing Title",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ea, placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! ",
+      title: "We use state of the art technology",
+      desc: "We work with computer vision, natural language processing and predictive analytics developing end to end solutions",
     },
     services: {
       title: "Services Landing Title",

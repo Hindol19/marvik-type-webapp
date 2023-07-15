@@ -5,6 +5,7 @@ import { enableScroll, disableScroll } from "../../scripts/ToggleScrollEnable";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
 import DropDown from "./DropDown/DropDown";
+import Logo from "../../assets/pentaneuron/pentaneuron.png";
 const Header = () => {
   const navigate = useNavigate();
 
@@ -40,7 +41,7 @@ const Header = () => {
       {isDesktop ? (
         <div className="navbar-layout">
           <div className="left" onClick={() => navigate("/")}>
-            Home
+            <img src={Logo} alt="" />
           </div>
           <div className="right">
             <div onClick={() => navigate("/about")}>About Us</div>
