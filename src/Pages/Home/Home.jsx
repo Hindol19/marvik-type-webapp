@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import Landing from "../../components/HomeComponents/Landing/Landing";
 import About from "../../components/HomeComponents/About/About";
 import Services from "../../components/HomeComponents/Services/Services";
-import Testimonials from "../../components/HomeComponents/Testitmonials/Testimonials";
+// import Testimonials from "../../components/HomeComponents/Testitmonials/Testimonials";
+import CarouselItem from "../../components/WorkComponents/Carousel/CarouselItem";
 import "./Home.scss";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -203,7 +204,8 @@ const Home = ({ landingContent }) => {
       <Landing landingContent={landingContent} isHome={true} />
       <About />
       <Services />
-      <Testimonials />
+      <CarouselItem />
+      {/* <Testimonials /> */}
     </div>
   );
 };
