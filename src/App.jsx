@@ -66,7 +66,7 @@ const App = () => {
             element={
               <ServicesPage
                 landingContent={landingContent.services}
-                content={servicesList.cb}
+                content={servicesList.conAI}
               />
             }
           />
