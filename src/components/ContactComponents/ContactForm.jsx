@@ -5,7 +5,7 @@ const ContactForm = () => {
   return (
     <div className="contactForm-container">
       <div className="contactForm-layout">
-        <h2 className="contact-title">Get in touch with us</h2>
+        {/* <h2 className="contact-title">Get in touch with us</h2> */}
         <form
           id="fs-frm"
           name="simple-contact-form"

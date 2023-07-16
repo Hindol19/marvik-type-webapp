@@ -36,7 +36,7 @@
       flex-direction: row;
       width: 750px;
       justify-content: space-around;
-      div {
+      .nav-item {
         padding: 2%;
         &:hover {
           cursor: pointer;

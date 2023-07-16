@@ -5,7 +5,7 @@ const ServicesPage = ({ landingContent, content }) => {
   window.scrollTo(0, 0);
   return (
     <div className="servicePage-container">
-      <Landing landingContent={landingContent} />
+      <Landing landingContent={content} />
       <ServiceContent content={content} />
     </div>
   );

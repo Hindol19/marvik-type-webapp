@@ -1,0 +1,42 @@
+@import "../../../css-config/mixins.scss";
+.contactLanding-container {
+  //   height: 100vh !important;
+  height: 600px;
+  font-family: "Inconsolata", monospace;
+  background-image: linear-gradient(
+    111.4deg,
+    rgba(7, 7, 9, 1) 6.5%,
+    rgba(27, 24, 113, 1) 93.2%
+  );
+  // height: 100vh;
+  padding-top: 10%;
+  @include md {
+    height: 600px;
+    // height: 100vh !important;
+    padding-top: 0;
+  }
+  .contactLanding-layout {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    position: relative;
+    @include md {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      max-width: 1400px;
+    }
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 60px;
+      @include md {
+        font-size: 100px;
+      }
+    }
+  }
+}

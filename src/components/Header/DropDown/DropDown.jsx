@@ -1,11 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./DropDown.scss";
-function DropDown() {
+function DropDown({ setIsServiceHovered }) {
   const navigate = useNavigate();
 
   return (
-    <div className="dropDown-container">
+    <div
+      className="dropDown-container"
+      onMouseEnter={() => setIsServiceHovered(true)}
+      onMouseLeave={() => setIsServiceHovered(false)}
+    >
       <ul>
         <li onClick={() => navigate("/services/llm")}>Large Language Models</li>
         <li onClick={() => navigate("/services/nlp")}>

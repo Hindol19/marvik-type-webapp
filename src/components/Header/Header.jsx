@@ -15,7 +15,7 @@ const Header = () => {
 
   // const [isDropDownHovered, setIsDropDownHovered] = useState(false);
   const [isServiceHovered, setIsServiceHovered] = useState(false);
-
+  console.log(isServiceHovered);
   const handleScroll = () => {
     const offset = window.scrollY;
 
@@ -44,25 +44,37 @@ const Header = () => {
             <img src={Logo} alt="" />
           </div>
           <div className="right">
-            <div onClick={() => navigate("/about")}>About Us</div>
-            <div onClick={() => navigate("/work")}>Our Work</div>
+            <div className="nav-item" onClick={() => navigate("/about")}>
+              About Us
+            </div>
+            <div className="nav-item" onClick={() => navigate("/work")}>
+              Our Work
+            </div>
             <div
+              className="nav-item"
+              onMouseEnter={() => setIsServiceHovered(true)}
+              onMouseLeave={() => setIsServiceHovered(false)}
               // onClick={() => navigate("/services")}
-              onClick={() =>
-                !isServiceHovered
-                  ? setIsServiceHovered(true)
-                  : setIsServiceHovered(false)
-              }
+              // onClick={() =>
+              //   !isServiceHovered
+              //     ? setIsServiceHovered(true)
+              //     : setIsServiceHovered(false)
+              // }
               // onAuxClick={() => setIsServiceHovered(false)}
             >
               Services
             </div>
             {/* <DropDown /> */}
-            <div className="contact-link" onClick={() => navigate("/contact")}>
+            {isServiceHovered && (
+              <DropDown setIsServiceHovered={setIsServiceHovered} />
+            )}
+            <div
+              className="contact-link nav-item "
+              onClick={() => navigate("/contact")}
+            >
               Contact
             </div>
           </div>
-          {isServiceHovered && <DropDown />}
         </div>
       ) : (
         <div className="sidebar-layout">
