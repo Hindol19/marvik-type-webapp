@@ -35,6 +35,7 @@ const Home = ({ landingContent }) => {
   // const Brain = "./assets/earth/scene.glb";
   const Brain = "./assets/curr.glb";
   const Bg = "./assets/bg/scene.gltf";
+  window.scrollTo(0, 0);
   useEffect(() => {
     // BASE
     const canvas = document.querySelector("canvas.webgl");
@@ -196,6 +197,10 @@ const Home = ({ landingContent }) => {
       window.requestAnimationFrame(tick);
     };
     tick();
+
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
   }, []);
 
   return (

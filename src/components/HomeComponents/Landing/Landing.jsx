@@ -1,6 +1,6 @@
 import React from "react";
 import "./Landing.scss";
-import Land from "../../../assets/flLand.png";
+import Land from "../../../assets/aboutPic.jpg";
 const Landing = ({ landingContent, isHome = false }) => {
   // isHome = false;
   // console.log(isHome);
@@ -21,7 +21,9 @@ const Landing = ({ landingContent, isHome = false }) => {
           </div>
         </div>
         {!isHome && (
-          <div className="right">{/* <img src={Land} alt="" /> */}</div>
+          <div className="right">
+            <img src={Land} alt="" />
+          </div>
         )}
       </div>
     </section>

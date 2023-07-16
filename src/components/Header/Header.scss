@@ -40,12 +40,18 @@
         padding: 2%;
         &:hover {
           cursor: pointer;
+          color: #f2ce72;
         }
       }
       .contact-link {
         background-color: #12dabf;
+        border: 2px solid #12dabf;
         color: black;
-        border-radius: 15px;
+        border-radius: 5px;
+        &:hover {
+          background-color: #6eead9;
+          color: black;
+        }
       }
     }
   }

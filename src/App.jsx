@@ -17,8 +17,9 @@ const App = () => {
       desc: "Software Developement Company",
     },
     about: {
-      title: "About Landing Title",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda ea, placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! placeat libero quos suscipit obcaecati reprehenderit fuga saepe architecto accusamus! ",
+      title:
+        "We build modern, cutting-edge solutions using machine learning and AI",
+      desc: "By helping companies identify opportunities, leverage their data, and make data-driven decisions, we want to help make artificial intelligence seamless and ubiquitous, transforming business realities.",
     },
     work: {
       title: "We use state of the art technology",
