@@ -1,6 +1,5 @@
 import React from "react";
 import "./ServiceContent.scss";
-import Cat from "../../../assets/cat.jpg";
 const ServiceContent = ({ content }) => {
   return (
     <div className="serviceContent-container">

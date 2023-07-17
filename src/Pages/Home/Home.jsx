@@ -8,31 +8,9 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { gsap } from "gsap";
-const tests = [
-  {
-    heading: "Heading",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas neque ratione, atque quod excepturi commodi enim a explicabo eveniet non.",
-  },
-  {
-    heading: "Heading",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas neque ratione, atque quod excepturi commodi enim a explicabo eveniet non.",
-  },
-  {
-    heading: "Heading",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas neque ratione, atque quod excepturi commodi enim a explicabo eveniet non.",
-  },
-  {
-    heading: "Heading",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas neque ratione, atque quod excepturi commodi enim a explicabo eveniet non.",
-  },
-];
 const Home = ({ landingContent }) => {
   // const Brain = "./assets/earth/scene.glb";
-  const Brain = "./assets/scene.glb";
+  const Brain = "./assets/earth/earth2";
   const Bg = "./assets/bg/scene.gltf";
   useEffect(() => {
     // BASE
@@ -123,7 +101,7 @@ const Home = ({ landingContent }) => {
       const newSection = Math.round(scrollY / sizes.height);
       // console.log(newSection);
 
-      if (newSection != currentSection) {
+      if (newSection !== currentSection) {
         currentSection = newSection;
 
         if (!!earth) {
@@ -216,7 +194,6 @@ const Home = ({ landingContent }) => {
 
   return (
     <div className="home-container">
-      <canvas className="webgl">I EXIST</canvas>
       <Landing landingContent={landingContent} isHome={true} />
       <About />
       <Services />

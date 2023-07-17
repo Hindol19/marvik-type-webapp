@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header/Header";
 // import Navbar2 from "./components/Navbar/Navbar2";
@@ -10,6 +11,12 @@ import Contact from "./Pages/Contact/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ServicesPage from "./Pages/Services/ServicesPage";
 import { servicesList } from "./data/servicesList.js";
+
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+import { gsap } from "gsap";
+
 const App = () => {
   const landingContent = {
     home: {
@@ -37,6 +44,7 @@ const App = () => {
 
   return (
     <div>
+      <canvas className="webgl">I EXIST</canvas>
       <BrowserRouter>
         <Header />
         {/* <Navbar2 /> */}

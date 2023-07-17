@@ -1,6 +1,5 @@
 import React from "react";
 import "./MoreWork.scss";
-import Cat from "../../../assets/cat.jpg";
 import Reason1 from "../../../assets/ServReasons/Reason1.jpg";
 import Reason2 from "../../../assets/ServReasons/Reason2.jpg";
 import Reason3 from "../../../assets/ServReasons/Reason3.jpg";

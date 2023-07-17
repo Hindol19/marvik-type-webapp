@@ -1,5 +1,7 @@
 @import "../../../css-config/mixins.scss";
 .contactLanding-container {
+  z-index: 1000;
+  position: relative;
   //   height: 100vh !important;
   height: 600px;
   font-family: "Inconsolata", monospace;
