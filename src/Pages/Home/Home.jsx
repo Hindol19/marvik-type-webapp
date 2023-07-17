@@ -101,6 +101,11 @@ const Home = ({ landingContent }) => {
         rotationY: 0.0314,
         positionX: 0,
       },
+      {
+        rotationZ: 0,
+        rotationY: 0.0314,
+        positionX: 0,
+      },
     ];
 
     let scrollY = window.scrollY;

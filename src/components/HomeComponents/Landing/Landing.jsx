@@ -7,7 +7,7 @@ const Landing = ({ landingContent, isHome = false }) => {
   // isHome = false;
   // console.log(isHome);
   return (
-    <section className="one landing-container">
+    <section className={`one landing-container ${isHome && "padding-none"}`}>
       <div className="landing-layout">
         <div className={`left ${isHome && "fixed-height"}`}>
           <h2 className="landing-title">{landingContent.title}</h2>

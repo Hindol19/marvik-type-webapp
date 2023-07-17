@@ -1,8 +1,8 @@
 import React from "react";
 import "./Difference.scss";
 // import Cat from "../../../assets/cat.jpg";
-import PIC1 from "../../../assets/Difference/pic1.jpg";
-import PIC2 from "../../../assets/Difference/pic2.jpg";
+import PIC1 from "../../../assets/Difference/pic1-min.jpg";
+import PIC2 from "../../../assets/Difference/pic2-min.jpg";
 const Difference = () => {
   return (
     <div className="diff-container">
