@@ -2,13 +2,11 @@ import React, { useEffect } from "react";
 import Landing from "../../components/HomeComponents/Landing/Landing";
 import About from "../../components/HomeComponents/About/About";
 import Services from "../../components/HomeComponents/Services/Services";
-// import Testimonials from "../../components/HomeComponents/Testitmonials/Testimonials";
 import CarouselItem from "../../components/WorkComponents/Carousel/CarouselItem";
 import "./Home.scss";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { gsap } from "gsap";
-// import SimpleSlider from "../../components/HomeComponents/Testitmonials/Testimonials";
 const tests = [
   {
     heading: "Heading",

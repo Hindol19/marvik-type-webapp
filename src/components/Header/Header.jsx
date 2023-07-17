@@ -54,13 +54,6 @@ const Header = () => {
               className="nav-item"
               onMouseEnter={() => setIsServiceHovered(true)}
               onMouseLeave={() => setIsServiceHovered(false)}
-              // onClick={() => navigate("/services")}
-              // onClick={() =>
-              //   !isServiceHovered
-              //     ? setIsServiceHovered(true)
-              //     : setIsServiceHovered(false)
-              // }
-              // onAuxClick={() => setIsServiceHovered(false)}
             >
               Services
             </div>
