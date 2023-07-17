@@ -33,182 +33,181 @@ const Home = ({ landingContent }) => {
   // const Brain = "./assets/earth/scene.glb";
   const Brain = "./assets/curr.glb";
   const Bg = "./assets/bg/scene.gltf";
-  window.scrollTo(0, 0);
-  useEffect(() => {
-    // BASE
-    const canvas = document.querySelector("canvas.webgl");
+  // useEffect(() => {
+  //   // BASE
+  //   const canvas = document.querySelector("canvas.webgl");
 
-    // SCENE
-    const scene = new THREE.Scene();
+  //   // SCENE
+  //   const scene = new THREE.Scene();
 
-    // TEST CUBE
-    // const cubeGeometry = new THREE.BoxGeometry(1, 1, 1, 1);
-    // const cubeMaterial = new THREE.MeshBasicMaterial({
-    //   color: 0xff0000,
-    // });
-    // const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-    // scene.add(cube);
+  //   // TEST CUBE
+  //   // const cubeGeometry = new THREE.BoxGeometry(1, 1, 1, 1);
+  //   // const cubeMaterial = new THREE.MeshBasicMaterial({
+  //   //   color: 0xff0000,
+  //   // });
+  //   // const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+  //   // scene.add(cube);
 
-    //GLTF LOADER
-    let earth = null;
-    const gltfLoader = new GLTFLoader();
-    gltfLoader.load(Brain, (gltf) => {
-      earth = gltf.scene;
-      earth.position.x = 1.5;
-      // earth.position.y = 1.9;
-      earth.rotation.y = -Math.PI * 0.3;
-      const radius = 1;
-      earth.scale.set(radius, radius, radius);
-      scene.add(earth);
-    });
+  //   //GLTF LOADER
+  //   let earth = null;
+  //   const gltfLoader = new GLTFLoader();
+  //   gltfLoader.load(Brain, (gltf) => {
+  //     earth = gltf.scene;
+  //     earth.position.x = 1.5;
+  //     // earth.position.y = 1.9;
+  //     earth.rotation.y = -Math.PI * 0.3;
+  //     const radius = 1;
+  //     earth.scale.set(radius, radius, radius);
+  //     scene.add(earth);
+  //   });
 
-    let background = null;
-    const gltfLoader2 = new GLTFLoader();
-    gltfLoader2.load(Bg, (gltf) => {
-      background = gltf.scene;
-      background.position.x = 1.5;
-      // earth.position.y = 1.9;
-      background.rotation.y = -Math.PI * 0.3;
-      const radius2 = 0.07;
-      background.scale.set(radius2, radius2, radius2);
-      scene.add(background);
-    });
+  //   let background = null;
+  //   const gltfLoader2 = new GLTFLoader();
+  //   gltfLoader2.load(Bg, (gltf) => {
+  //     background = gltf.scene;
+  //     background.position.x = 1.5;
+  //     // earth.position.y = 1.9;
+  //     background.rotation.y = -Math.PI * 0.3;
+  //     const radius2 = 0.07;
+  //     background.scale.set(radius2, radius2, radius2);
+  //     scene.add(background);
+  //   });
 
-    // SCROLL:
-    const transformDonut = [
-      {
-        rotationZ: 0,
-        rotationY: -Math.PI * 0.3,
-        positionX: 1.5,
-      },
-      {
-        rotationZ: -0.4,
-        rotationY: 0.9,
-        positionX: -1.8,
-      },
-      {
-        rotationZ: 0,
-        rotationY: 0.0314,
-        positionX: 0,
-      },
-      {
-        rotationZ: 0,
-        rotationY: 0.0314,
-        positionX: 0,
-      },
-      {
-        rotationZ: 0,
-        rotationY: 0.0314,
-        positionX: 0,
-      },
-      {
-        rotationZ: 0,
-        rotationY: 0.0314,
-        positionX: 0,
-      },
-    ];
+  //   // SCROLL:
+  //   const transformDonut = [
+  //     {
+  //       rotationZ: 0,
+  //       rotationY: -Math.PI * 0.3,
+  //       positionX: 1.5,
+  //     },
+  //     {
+  //       rotationZ: -0.4,
+  //       rotationY: 0.9,
+  //       positionX: -1.8,
+  //     },
+  //     {
+  //       rotationZ: 0,
+  //       rotationY: 0.0314,
+  //       positionX: 0,
+  //     },
+  //     {
+  //       rotationZ: 0,
+  //       rotationY: 0.0314,
+  //       positionX: 0,
+  //     },
+  //     {
+  //       rotationZ: 0,
+  //       rotationY: 0.0314,
+  //       positionX: 0,
+  //     },
+  //     {
+  //       rotationZ: 0,
+  //       rotationY: 0.0314,
+  //       positionX: 0,
+  //     },
+  //   ];
 
-    let scrollY = window.scrollY;
-    let currentSection = 0;
-    window.addEventListener("scroll", () => {
-      scrollY = window.scrollY;
-      const newSection = Math.round(scrollY / sizes.height);
-      // console.log(newSection);
+  //   let scrollY = window.scrollY;
+  //   let currentSection = 0;
+  //   window.addEventListener("scroll", () => {
+  //     scrollY = window.scrollY;
+  //     const newSection = Math.round(scrollY / sizes.height);
+  //     // console.log(newSection);
 
-      if (newSection != currentSection) {
-        currentSection = newSection;
+  //     if (newSection != currentSection) {
+  //       currentSection = newSection;
 
-        if (!!earth) {
-          gsap.to(earth.rotation, {
-            duration: 1,
-            ease: "power2.inOut",
-            z: transformDonut[currentSection]?.rotationZ,
-          });
-          gsap.to(earth.rotation, {
-            duration: 1,
-            ease: "power2.inOut",
-            y: transformDonut[currentSection]?.rotationY,
-          });
+  //       if (!!earth) {
+  //         gsap.to(earth.rotation, {
+  //           duration: 1,
+  //           ease: "power2.inOut",
+  //           z: transformDonut[currentSection]?.rotationZ,
+  //         });
+  //         gsap.to(earth.rotation, {
+  //           duration: 1,
+  //           ease: "power2.inOut",
+  //           y: transformDonut[currentSection]?.rotationY,
+  //         });
 
-          gsap.to(earth.position, {
-            duration: 1,
-            ease: "power2.inOut",
-            x: transformDonut[currentSection]?.positionX,
-          });
-        }
-      }
-    });
+  //         gsap.to(earth.position, {
+  //           duration: 1,
+  //           ease: "power2.inOut",
+  //           x: transformDonut[currentSection]?.positionX,
+  //         });
+  //       }
+  //     }
+  //   });
 
-    // ON RELOAD =>
-    window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-    };
+  //   // ON RELOAD =>
+  //   window.onbeforeunload = function () {
+  //     window.scrollTo(0, 0);
+  //   };
 
-    // SIZES
-    const sizes = {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
+  //   // SIZES
+  //   const sizes = {
+  //     width: window.innerWidth,
+  //     height: window.innerHeight,
+  //   };
 
-    // CAMERA
-    const camera = new THREE.PerspectiveCamera(
-      35,
-      sizes.width / sizes.height,
-      0.1,
-      1000
-    );
-    camera.position.z = 5;
-    scene.add(camera);
+  //   // CAMERA
+  //   const camera = new THREE.PerspectiveCamera(
+  //     35,
+  //     sizes.width / sizes.height,
+  //     0.1,
+  //     1000
+  //   );
+  //   camera.position.z = 5;
+  //   scene.add(camera);
 
-    // LIGHT
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-    scene.add(ambientLight);
+  //   // LIGHT
+  //   const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  //   scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(1, 2, 0);
-    scene.add(directionalLight);
+  //   const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+  //   directionalLight.position.set(1, 2, 0);
+  //   scene.add(directionalLight);
 
-    // RENDERER
-    const renderer = new THREE.WebGLRenderer({
-      canvas: canvas,
-      antialias: true,
-      alpha: true,
-    });
+  //   // RENDERER
+  //   const renderer = new THREE.WebGLRenderer({
+  //     canvas: canvas,
+  //     antialias: true,
+  //     alpha: true,
+  //   });
 
-    renderer.setSize(sizes.width, sizes.height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  //   renderer.setSize(sizes.width, sizes.height);
+  //   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // renderer.render(scene, camera);
+  //   // renderer.render(scene, camera);
 
-    // ANIMATE
-    const clock = new THREE.Clock();
-    let lastElapsedTime = 0;
+  //   // ANIMATE
+  //   const clock = new THREE.Clock();
+  //   let lastElapsedTime = 0;
 
-    const tick = () => {
-      const elapsedTime = clock.getElapsedTime();
-      const deltaTime = elapsedTime - lastElapsedTime;
-      lastElapsedTime = elapsedTime;
+  //   const tick = () => {
+  //     const elapsedTime = clock.getElapsedTime();
+  //     const deltaTime = elapsedTime - lastElapsedTime;
+  //     lastElapsedTime = elapsedTime;
 
-      if (!!earth) {
-        earth.position.y = Math.sin(elapsedTime * 0.5) * 0.1 - 0.2;
-        earth.rotation.y = elapsedTime;
-        background.rotation.y = elapsedTime / 10;
-      }
-      // console.log("tick");
-      renderer.render(scene, camera);
+  //     if (!!earth) {
+  //       earth.position.y = Math.sin(elapsedTime * 0.5) * 0.1 - 0.2;
+  //       earth.rotation.y = elapsedTime;
+  //       background.rotation.y = elapsedTime / 10;
+  //     }
+  //     // console.log("tick");
+  //     renderer.render(scene, camera);
 
-      window.requestAnimationFrame(tick);
-    };
-    tick();
+  //     window.requestAnimationFrame(tick);
+  //   };
+  //   tick();
 
-    window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-    };
-  }, []);
+  //   window.onbeforeunload = function () {
+  //     window.scrollTo(0, 0);
+  //   };
+  // }, []);
 
   return (
     <div className="home-container">
-      <canvas className="webgl">I EXIST</canvas>
+      {/* <canvas className="webgl">I EXIST</canvas> */}
       <Landing landingContent={landingContent} isHome={true} />
       <About />
       <Services />
