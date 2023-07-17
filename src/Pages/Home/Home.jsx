@@ -8,9 +8,10 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { gsap } from "gsap";
+import HomeLanding from "../../components/HomeComponents/Landing/HomeLanding";
 const Home = ({ landingContent }) => {
-  const Brain = "./assets/earth/earth2C.glb";
-  // const Brain = "./assets/curr.glb";
+  const Brain = "./assets/earth/earth1.glb";
+  // const Brain = "./assets/currC.glb";
   const Bg = "./assets/bg/scene.gltf";
   useEffect(() => {
     // BASE
@@ -43,7 +44,7 @@ const Home = ({ landingContent }) => {
       earth.position.x = 1.5;
       // earth.position.y = 1.9;
       earth.rotation.y = -Math.PI * 0.3;
-      const radius = 0.7;
+      const radius = 0.4;
       earth.scale.set(radius, radius, radius);
       scene.add(earth);
     });
@@ -57,7 +58,7 @@ const Home = ({ landingContent }) => {
       background.rotation.y = -Math.PI * 0.3;
       const radius2 = 0.07;
       background.scale.set(radius2, radius2, radius2);
-      scene.add(background);
+      // scene.add(background);
     });
 
     // SCROLL:
@@ -177,7 +178,7 @@ const Home = ({ landingContent }) => {
 
       if (!!earth) {
         earth.position.y = Math.sin(elapsedTime * 0.5) * 0.1 - 0.2;
-        earth.rotation.y = elapsedTime;
+        earth.rotation.y = elapsedTime / 8;
       }
       if (!!background) {
         background.rotation.y = elapsedTime / 10;
@@ -196,7 +197,8 @@ const Home = ({ landingContent }) => {
 
   return (
     <div className="home-container">
-      <Landing landingContent={landingContent} isHome={true} />
+      <HomeLanding />
+      {/* <Landing landingContent={landingContent} isHome={true} /> */}
       <About />
       <Services />
       <CarouselItem />

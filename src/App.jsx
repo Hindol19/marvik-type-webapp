@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header/Header";
@@ -11,11 +11,7 @@ import Contact from "./Pages/Contact/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ServicesPage from "./Pages/Services/ServicesPage";
 import { servicesList } from "./data/servicesList.js";
-
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
-import { gsap } from "gsap";
+import InitialPage from "./InitialPage";
 
 const App = () => {
   const landingContent = {
@@ -42,67 +38,80 @@ const App = () => {
     },
   };
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 5000); // Stop loading after 5 seconds
+  }, []);
+
   return (
     <div>
       <canvas className="webgl">I EXIST</canvas>
       <BrowserRouter>
-        <Header />
-        {/* <Navbar2 /> */}
-        <Routes>
-          <Route
-            path="/"
-            element={<Home landingContent={landingContent.home} />}
-          />
-          <Route
-            path="/about"
-            element={<About landingContent={landingContent.about} />}
-          />
-          <Route
-            path="/work"
-            element={<Work landingContent={landingContent.work} />}
-          />
-          <Route
-            path="/services/llm"
-            element={
-              <ServicesPage
-                landingContent={landingContent.services}
-                content={servicesList.llm}
+        {isLoading ? (
+          <InitialPage />
+        ) : (
+          <>
+            <Header />
+            <Routes>
+              <Route
+                path="/"
+                element={<Home landingContent={landingContent.home} />}
               />
-            }
-          />
-          <Route
-            path="/services/cb"
-            element={
-              <ServicesPage
-                landingContent={landingContent.services}
-                content={servicesList.conAI}
+              <Route
+                path="/about"
+                element={<About landingContent={landingContent.about} />}
               />
-            }
-          />
-          <Route
-            path="/services/nlp"
-            element={
-              <ServicesPage
-                landingContent={landingContent.services}
-                content={servicesList.nlp}
+              <Route
+                path="/work"
+                element={<Work landingContent={landingContent.work} />}
               />
-            }
-          />
-          <Route
-            path="/services/cv"
-            element={
-              <ServicesPage
-                landingContent={landingContent.services}
-                content={servicesList.cv}
+              <Route
+                path="/services/llm"
+                element={
+                  <ServicesPage
+                    landingContent={landingContent.services}
+                    content={servicesList.llm}
+                  />
+                }
               />
-            }
-          />
-          <Route
-            path="/contact"
-            element={<Contact landingContent={landingContent.contact} />}
-          />
-        </Routes>
-        <Footer />
+              <Route
+                path="/services/cb"
+                element={
+                  <ServicesPage
+                    landingContent={landingContent.services}
+                    content={servicesList.conAI}
+                  />
+                }
+              />
+              <Route
+                path="/services/nlp"
+                element={
+                  <ServicesPage
+                    landingContent={landingContent.services}
+                    content={servicesList.nlp}
+                  />
+                }
+              />
+              <Route
+                path="/services/cv"
+                element={
+                  <ServicesPage
+                    landingContent={landingContent.services}
+                    content={servicesList.cv}
+                  />
+                }
+              />
+              <Route
+                path="/contact"
+                element={<Contact landingContent={landingContent.contact} />}
+              />
+            </Routes>
+            <Footer />
+          </>
+        )}
       </BrowserRouter>
     </div>
   );

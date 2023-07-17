@@ -19,6 +19,7 @@
     margin: 3% auto;
   }
   h3 {
+    color: white;
     font-family: "Tektur", cursive;
     font-size: 20px;
     @include md {
@@ -26,6 +27,8 @@
     }
   }
   p {
+    // color: rgb(213, 221, 74);
+    font-weight: bold;
     font-size: 12px;
     @include md {
       font-size: 20px;

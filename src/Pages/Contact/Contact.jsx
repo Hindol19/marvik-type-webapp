@@ -2,7 +2,7 @@ import React from "react";
 import ContactLanding from "../../components/ContactComponents/ContactLanding/ContactLanding";
 import ContactForm from "../../components/ContactComponents/ContactForm";
 const Contact = ({ landingContent }) => {
-  // window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
   return (
     <div>
       {/* <Landing landingContent={landingContent} /> */}
