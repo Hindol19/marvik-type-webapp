@@ -4,7 +4,7 @@ import Projects from "../../components/WorkComponents/Projects/Projects";
 import MoreWork from "../../components/WorkComponents/MoreWork/MoreWork";
 
 const Work = ({ landingContent }) => {
-  // window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
   return (
     <div className="work-container">
       <Landing landingContent={landingContent} />
