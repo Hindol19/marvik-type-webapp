@@ -58,7 +58,7 @@ const Home = ({ landingContent }) => {
       earth.position.x = 1.5;
       // earth.position.y = 1.9;
       earth.rotation.y = -Math.PI * 0.3;
-      const radius = 0.4;
+      const radius = 1;
       earth.scale.set(radius, radius, radius);
       scene.add(earth);
     });
@@ -161,9 +161,9 @@ const Home = ({ landingContent }) => {
     camera.position.z = 5;
     scene.add(camera);
 
-    // LIGHT
-    // const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-    // scene.add(ambientLight);
+    // LIGHT;
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    scene.add(ambientLight);
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(1, 2, 0);
