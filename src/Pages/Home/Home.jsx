@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import Landing from "../../components/HomeComponents/Landing/Landing";
 import About from "../../components/HomeComponents/About/About";
 import Services from "../../components/HomeComponents/Services/Services";
@@ -31,7 +31,7 @@ const tests = [
   },
 ];
 const Home = ({ landingContent }) => {
-  const Brain = "./assets/earth/earth3.glb";
+  const Brain = "./assets/earth/earth2.glb";
   // const Brain = "./assets/the_moon.glb";
   const Bg = "./assets/bg/scene.gltf";
   useEffect(() => {
@@ -41,14 +41,6 @@ const Home = ({ landingContent }) => {
 
     // SCENE
     const scene = new THREE.Scene();
-
-    // TEST CUBE
-    // const cubeGeometry = new THREE.BoxGeometry(1, 1, 1, 1);
-    // const cubeMaterial = new THREE.MeshBasicMaterial({
-    //   color: 0xff0000,
-    // });
-    // const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-    // scene.add(cube);
 
     //GLTF LOADER
     let earth = null;
@@ -66,7 +58,7 @@ const Home = ({ landingContent }) => {
       earth.position.x = 1.5;
       // earth.position.y = 1.9;
       earth.rotation.y = -Math.PI * 0.3;
-      const radius = 0.4;
+      const radius = 1;
       earth.scale.set(radius, radius, radius);
       scene.add(earth);
     });

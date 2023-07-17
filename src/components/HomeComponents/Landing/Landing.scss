@@ -1,7 +1,8 @@
 @import "../../../css-config/mixins.scss";
 .padding-none {
+  height: 100vh !important;
   @include md {
-    padding-bottom: 0 !important;
+    padding: 0 !important;
   }
 }
 .fixed-height {
@@ -12,7 +13,7 @@
 }
 
 .landing-container {
-  min-height: 100vh !important;
+  min-height: 100vh;
   font-family: "Inconsolata", monospace;
   background-image: linear-gradient(
     111.4deg,
@@ -22,7 +23,7 @@
   // height: 100vh;
   padding-top: 10%;
   @include md {
-    min-height: 100vh !important;
+    min-height: 100vh;
     padding: 10% 0;
   }
   .landing-layout {
