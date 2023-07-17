@@ -1,5 +1,8 @@
 @import "../../../css-config/mixins.scss";
 .diff-container {
+  position: relative;
+  z-index: 1000;
+  background-color: white;
   //   height: 100vh;
   .diff-layout {
     height: 100%;

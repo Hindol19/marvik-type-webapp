@@ -9,8 +9,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { gsap } from "gsap";
 const Home = ({ landingContent }) => {
-  // const Brain = "./assets/earth/scene.glb";
-  const Brain = "./assets/curr.glb";
+  const Brain = "./assets/earth/earth2.glb";
+  // const Brain = "./assets/curr.glb";
   const Bg = "./assets/bg/scene.gltf";
   useEffect(() => {
     // BASE
@@ -31,21 +31,21 @@ const Home = ({ landingContent }) => {
     let earth = null;
     const gltfLoader = new GLTFLoader();
 
-    const dLoader = new DRACOLoader();
-    dLoader.setDecoderPath(
-      "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
-    );
-    dLoader.setDecoderConfig({ type: "js" });
-    gltfLoader.setDRACOLoader(dLoader);
+    // const dLoader = new DRACOLoader();
+    // dLoader.setDecoderPath(
+    //   "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
+    // );
+    // dLoader.setDecoderConfig({ type: "js" });
+    // gltfLoader.setDRACOLoader(dLoader);
 
     gltfLoader.load(Brain, (gltf) => {
       earth = gltf.scene;
       earth.position.x = 1.5;
       // earth.position.y = 1.9;
       earth.rotation.y = -Math.PI * 0.3;
-      const radius = 1;
+      const radius = 0.8;
       earth.scale.set(radius, radius, radius);
-      // scene.add(earth);
+      scene.add(earth);
     });
 
     let background = null;
@@ -147,10 +147,10 @@ const Home = ({ landingContent }) => {
     scene.add(camera);
 
     // LIGHT
-    const ambientLight = new THREE.AmbientLight(0x000000, 0.8);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0x000000, 1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(1, 2, 0);
     scene.add(directionalLight);
 
@@ -178,6 +178,8 @@ const Home = ({ landingContent }) => {
       if (!!earth) {
         earth.position.y = Math.sin(elapsedTime * 0.5) * 0.1 - 0.2;
         earth.rotation.y = elapsedTime;
+      }
+      if (!!background) {
         background.rotation.y = elapsedTime / 10;
       }
       // console.log("tick");

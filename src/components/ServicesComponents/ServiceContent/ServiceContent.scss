@@ -1,6 +1,9 @@
 @import "../../../css-config/mixins.scss";
 .serviceContent-container {
   //   height: 100vh;
+  position: relative;
+  z-index: 1000;
+  background-color: white;
   .serviceContent-layout {
     height: 100%;
     display: flex;
