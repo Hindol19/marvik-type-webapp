@@ -162,8 +162,8 @@ const Home = ({ landingContent }) => {
     scene.add(camera);
 
     // LIGHT
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-    scene.add(ambientLight);
+    // const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    // scene.add(ambientLight);
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(1, 2, 0);
