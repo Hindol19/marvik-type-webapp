@@ -6,30 +6,10 @@ import CarouselItem from "../../components/WorkComponents/Carousel/CarouselItem"
 import "./Home.scss";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-// import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { gsap } from "gsap";
-const tests = [
-  {
-    heading: "Heading",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas neque ratione, atque quod excepturi commodi enim a explicabo eveniet non.",
-  },
-  {
-    heading: "Heading",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas neque ratione, atque quod excepturi commodi enim a explicabo eveniet non.",
-  },
-  {
-    heading: "Heading",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas neque ratione, atque quod excepturi commodi enim a explicabo eveniet non.",
-  },
-  {
-    heading: "Heading",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas neque ratione, atque quod excepturi commodi enim a explicabo eveniet non.",
-  },
-];
+
 const Home = ({ landingContent }) => {
   const Brain = "./assets/earth/earth2.glb";
   // const Brain = "./assets/the_moon.glb";
@@ -46,12 +26,12 @@ const Home = ({ landingContent }) => {
     let earth = null;
     const gltfLoader = new GLTFLoader();
 
-    // const dLoader = new DRACOLoader();
-    // dLoader.setDecoderPath(
-    //   "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
-    // );
-    // dLoader.setDecoderConfig({ type: "js" });
-    // gltfLoader.setDRACOLoader(dLoader);
+    const dLoader = new DRACOLoader();
+    dLoader.setDecoderPath(
+      "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
+    );
+    dLoader.setDecoderConfig({ type: "js" });
+    gltfLoader.setDRACOLoader(dLoader);
 
     gltfLoader.load(Brain, (gltf) => {
       earth = gltf.scene;
@@ -60,7 +40,7 @@ const Home = ({ landingContent }) => {
       earth.rotation.y = -Math.PI * 0.3;
       const radius = 1;
       earth.scale.set(radius, radius, radius);
-      scene.add(earth);
+      // scene.add(earth);
     });
 
     let background = null;
