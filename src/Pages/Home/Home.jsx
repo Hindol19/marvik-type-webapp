@@ -10,7 +10,7 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { gsap } from "gsap";
 const Home = ({ landingContent }) => {
   // const Brain = "./assets/earth/scene.glb";
-  const Brain = "./assets/earth/earth2";
+  const Brain = "./assets/curr.glb";
   const Bg = "./assets/bg/scene.gltf";
   useEffect(() => {
     // BASE
