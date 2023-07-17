@@ -31,7 +31,7 @@ const tests = [
   },
 ];
 const Home = ({ landingContent }) => {
-  const Brain = "./assets/earth/earth3.glb";
+  const Brain = "./assets/earth/earth2.glb";
   // const Brain = "./assets/the_moon.glb";
   const Bg = "./assets/bg/scene.gltf";
   useEffect(() => {
