@@ -1,8 +1,7 @@
 @import "../../../css-config/mixins.scss";
 .padding-none {
-  height: 100vh !important;
   @include md {
-    padding: 0 !important;
+    padding-bottom: 0 !important;
   }
 }
 .fixed-height {
@@ -24,7 +23,7 @@
   padding-top: 10%;
   @include md {
     min-height: 100vh !important;
-    // padding-bottom: 10%;
+    padding: 10% 0;
   }
   .landing-layout {
     height: 100%;
