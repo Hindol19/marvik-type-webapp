@@ -22,7 +22,7 @@
       font-family: "Tektur", cursive;
       margin: 4% 0;
       //   text-align: left;
-      font-size: 25px;
+      font-size: 20px;
       @include md {
         font-size: 40px;
       }
@@ -34,7 +34,7 @@
       //   border: 2px solid red;
       margin: 4%;
       width: 90%;
-      height: 350px;
+      // height: 350px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -64,16 +64,17 @@
         flex-direction: column;
         justify-content: center;
         h3 {
+          text-align: center;
           font-family: "Tektur", cursive;
-          padding: 2%;
-          font-size: 20px;
+          padding: 5%;
+          font-size: 16px;
           @include md {
             font-size: 30px;
             padding: 2%;
           }
         }
         p {
-          padding: 2%;
+          padding: 5%;
           font-size: 12px;
           @include md {
             font-size: 20px;

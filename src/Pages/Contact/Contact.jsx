@@ -1,5 +1,4 @@
 import React from "react";
-import Landing from "../../components/HomeComponents/Landing/Landing";
 import ContactLanding from "../../components/ContactComponents/ContactLanding/ContactLanding";
 import ContactForm from "../../components/ContactComponents/ContactForm";
 const Contact = ({ landingContent }) => {

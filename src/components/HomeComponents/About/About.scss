@@ -1,7 +1,7 @@
 @import "../../../css-config/mixins.scss";
 .about-container {
   font-family: "Inconsolata", monospace;
-
+  
   height: 100vh;
   .about-layout {
     height: 100%;
@@ -20,26 +20,26 @@
       max-width: 1400px;
     }
     .right {
-      // backdrop-filter: blur(5px);
       background-color: #ffb300a5;
-      border-radius: 20px;
+      border-radius: 10px;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
         rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-      // border: 2px solid black;
-      padding: 0 50px;
-      width: 50%;
+      padding: 0 15px;
+      width: 80%;
       height: 450px;
-      //   border: 2px solid red;
       color: black;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       @include md {
+        width: 50%;
+        padding: 0 50px;
         height: 680px;
+        border-radius: 20px;
       }
       .about-title {
         font-family: "Tektur", cursive;
-        font-size: 25px;
+        font-size: 16px;
         @include md {
           font-size: 40px;
         }
@@ -53,9 +53,13 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            margin-bottom: 6px;
-            padding-bottom: 6px;
+            margin-bottom: 4px;
+            padding-bottom: 4px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.074);
+            @include md {
+              margin-bottom: 6px;
+              padding-bottom: 6px;
+            }
             .list-content {
               width: 100%;
               span {
@@ -67,7 +71,10 @@
             svg {
               margin-right: 2px;
               font-weight: lighter;
-              font-size: 28px;
+              font-size: 18px;
+              @include md {
+                font-size: 28px;
+              }
             }
           }
         }

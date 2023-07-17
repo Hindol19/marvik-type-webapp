@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Footer.scss";
-import { FaHome, FaQuestion, FaNetworkWired } from "react-icons/fa";
+import { FaHome,  FaNetworkWired } from "react-icons/fa";
 import { AiOutlineMail, AiOutlineInfoCircle } from "react-icons/ai";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
