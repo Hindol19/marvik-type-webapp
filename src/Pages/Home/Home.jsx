@@ -8,11 +8,17 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+
 import { gsap } from "gsap";
 
 const Home = ({ landingContent }) => {
+
   const Brain = "./assets/earth/earth2.glb";
   // const Brain = "./assets/the_moon.glb";
+
+  // const Brain = "./assets/earth/scene.glb";
+  const Brain = "./assets/curr.glb";
+
   const Bg = "./assets/bg/scene.gltf";
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,14 +31,6 @@ const Home = ({ landingContent }) => {
     //GLTF LOADER
     let earth = null;
     const gltfLoader = new GLTFLoader();
-
-    const dLoader = new DRACOLoader();
-    dLoader.setDecoderPath(
-      "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
-    );
-    dLoader.setDecoderConfig({ type: "js" });
-    gltfLoader.setDRACOLoader(dLoader);
-
     gltfLoader.load(Brain, (gltf) => {
       earth = gltf.scene;
       earth.position.x = 1.5;
@@ -52,7 +50,7 @@ const Home = ({ landingContent }) => {
       background.rotation.y = -Math.PI * 0.3;
       const radius2 = 0.07;
       background.scale.set(radius2, radius2, radius2);
-      scene.add(background);
+      // scene.add(background);
     });
 
     // SCROLL:
@@ -141,7 +139,7 @@ const Home = ({ landingContent }) => {
     camera.position.z = 5;
     scene.add(camera);
 
-    // LIGHT;
+    // LIGHT
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
 
