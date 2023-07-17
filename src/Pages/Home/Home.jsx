@@ -58,20 +58,20 @@ const Home = ({ landingContent }) => {
       earth.rotation.y = -Math.PI * 0.3;
       const radius = 1;
       earth.scale.set(radius, radius, radius);
-      scene.add(earth);
+      // scene.add(earth);
     });
 
-    // let background = null;
-    // const gltfLoader2 = new GLTFLoader();
-    // gltfLoader2.load(Bg, (gltf) => {
-    //   background = gltf.scene;
-    //   background.position.x = 1.5;
-    //   // earth.position.y = 1.9;
-    //   background.rotation.y = -Math.PI * 0.3;
-    //   const radius2 = 0.07;
-    //   background.scale.set(radius2, radius2, radius2);
-    //   scene.add(background);
-    // });
+    let background = null;
+    const gltfLoader2 = new GLTFLoader();
+    gltfLoader2.load(Bg, (gltf) => {
+      background = gltf.scene;
+      background.position.x = 1.5;
+      // earth.position.y = 1.9;
+      background.rotation.y = -Math.PI * 0.3;
+      const radius2 = 0.07;
+      background.scale.set(radius2, radius2, radius2);
+      // scene.add(background);
+    });
 
     // SCROLL:
     const transformDonut = [
@@ -191,7 +191,7 @@ const Home = ({ landingContent }) => {
       if (!!earth) {
         earth.position.y = Math.sin(elapsedTime * 0.5) * 0.1 - 0.2;
         earth.rotation.y = elapsedTime;
-        // background.rotation.y = elapsedTime / 10;
+        background.rotation.y = elapsedTime / 10;
       }
       // console.log("tick");
       renderer.render(scene, camera);
