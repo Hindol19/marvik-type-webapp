@@ -60,7 +60,7 @@ const Home = ({ landingContent }) => {
       earth.rotation.y = -Math.PI * 0.3;
       const radius = 1;
       earth.scale.set(radius, radius, radius);
-      // scene.add(earth);
+      scene.add(earth);
     });
 
     let background = null;
@@ -192,7 +192,7 @@ const Home = ({ landingContent }) => {
 
       if (!!earth) {
         earth.position.y = Math.sin(elapsedTime * 0.5) * 0.1 - 0.2;
-        // earth.rotation.y = elapsedTime;
+        earth.rotation.y = elapsedTime;
         background.rotation.y = elapsedTime / 10;
       }
       // console.log("tick");
