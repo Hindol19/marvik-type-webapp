@@ -31,7 +31,7 @@ const tests = [
   },
 ];
 const Home = ({ landingContent }) => {
-  const Brain = "./assets/earth/earth2.glb";
+  const Brain = "./assets/earth/earth3.glb";
   // const Brain = "./assets/the_moon.glb";
   const Bg = "./assets/bg/scene.gltf";
   useEffect(() => {
@@ -46,19 +46,19 @@ const Home = ({ landingContent }) => {
     let earth = null;
     const gltfLoader = new GLTFLoader();
 
-    // const dLoader = new DRACOLoader();
-    // dLoader.setDecoderPath(
-    //   "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
-    // );
-    // dLoader.setDecoderConfig({ type: "js" });
-    // gltfLoader.setDRACOLoader(dLoader);
+    const dLoader = new DRACOLoader();
+    dLoader.setDecoderPath(
+      "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
+    );
+    dLoader.setDecoderConfig({ type: "js" });
+    gltfLoader.setDRACOLoader(dLoader);
 
     gltfLoader.load(Brain, (gltf) => {
       earth = gltf.scene;
       earth.position.x = 1.5;
       // earth.position.y = 1.9;
       earth.rotation.y = -Math.PI * 0.3;
-      const radius = 1;
+      const radius = 0.4;
       earth.scale.set(radius, radius, radius);
       scene.add(earth);
     });
