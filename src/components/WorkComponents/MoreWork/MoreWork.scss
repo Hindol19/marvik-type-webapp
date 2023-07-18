@@ -2,8 +2,8 @@
 .moreWork-container {
   //   height: 100vh;
   position: relative;
-  z-index: 1000;
-  background-color: white;
+  z-index: -99;
+  // background-color: white;
   .moreWork-layout {
     height: 100%;
     display: flex;
