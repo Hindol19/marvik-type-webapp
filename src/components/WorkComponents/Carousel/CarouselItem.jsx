@@ -46,7 +46,7 @@ function CarouselItem() {
               </p>
             </Carousel.Caption>
           </Carousel.Item>
-          <Carousel.Item>
+          {/* <Carousel.Item>
             <img
               className="carouselItem-image d-block w-100"
               src={Bg}
@@ -63,7 +63,7 @@ function CarouselItem() {
                 Provident sunt itaque quos quo."
               </p>
             </Carousel.Caption>
-          </Carousel.Item>
+          </Carousel.Item> */}
         </Carousel>
       </div>
     </div>
