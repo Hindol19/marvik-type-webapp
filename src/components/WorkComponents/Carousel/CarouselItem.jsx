@@ -23,13 +23,11 @@ function CarouselItem() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
+              <h3>Ayush Choudhury</h3>
               <p>
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                aliquam excepturi laudantium rem quam quo nulla nobis incidunt
-                voluptatibus voluptatem? Incidunt, magni atque. Dignissimos,
-                quasi necessitatibus sapiente eligendi totam molestias?
-                Provident sunt itaque quos quo."
+                "He did a great job with the task assigned to him and submitted
+                it within the stipulated time. I believe he will be a great
+                asset in his future endeavours"
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -41,13 +39,10 @@ function CarouselItem() {
             />
 
             <Carousel.Caption>
-              <h3>Second slide label</h3>
+              <h3>Elizabeth L, UC San Diego</h3>
               <p>
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-                aliquam excepturi laudantium rem quam quo nulla nobis incidunt
-                voluptatibus voluptatem? Incidunt, magni atque. Dignissimos,
-                quasi necessitatibus sapiente eligendi totam molestias?
-                Provident sunt itaque quos quo."
+                "Engineers in Pentaneuron completed the task on time and
+                communicated well throughout."
               </p>
             </Carousel.Caption>
           </Carousel.Item>

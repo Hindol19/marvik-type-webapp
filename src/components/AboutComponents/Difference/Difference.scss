@@ -1,8 +1,10 @@
 @import "../../../css-config/mixins.scss";
 .diff-container {
+  background: url("https://images.unsplash.com/photo-1631477076114-9123f721b9dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+    no-repeat center center/cover;
   position: relative;
-  z-index: 1000;
-  background-color: white;
+  // z-index: -99;
+  // background-color: white;
   //   height: 100vh;
   .diff-layout {
     height: 100%;
@@ -22,6 +24,7 @@
       max-width: 1400px;
     }
     .diff-title {
+      color: white;
       font-family: "Tektur", cursive;
       margin: 4% 0;
       //   text-align: left;
@@ -67,6 +70,7 @@
         flex-direction: column;
         justify-content: center;
         h3 {
+          color: white;
           text-align: center;
           font-family: "Tektur", cursive;
           padding: 5%;
@@ -77,6 +81,7 @@
           }
         }
         p {
+          color: white;
           padding: 5%;
           font-size: 12px;
           @include md {
@@ -87,12 +92,20 @@
       }
     }
     .row1 {
-      background-color: #fbab7e;
-      background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+      backdrop-filter: blur(5px);
+      background-color: #fbac7e7d;
+      background-image: linear-gradient(
+        62deg,
+        #fbac7ebb 0%rgba (247, 207, 104, 0.744) 68 100%
+      );
     }
     .row2 {
-      background-color: #85ffbd;
-      background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+      backdrop-filter: blur(5px);
+      background-color: #85ffbe7e;
+      background-image: linear-gradient(
+        45deg,
+        #85ffbeb7 0%rgba (255, 251, 125, 0.69) 7d 100%
+      );
       flex-direction: column-reverse;
       @include md {
         flex-direction: row;

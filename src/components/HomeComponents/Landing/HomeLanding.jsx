@@ -17,10 +17,10 @@ const HomeLanding = () => {
           </button>
           <div className="companies">
             <ul>
-              <li>Google</li>
-              <li>Microsoft</li>
-              <li>Amazon</li>
-              <li>Meta</li>
+              <li>Emerge Wave</li>
+              <li>InfinitiSync</li>
+              <li>Novus Tech</li>
+              <li>Luminox.com</li>
             </ul>
           </div>
         </div>
